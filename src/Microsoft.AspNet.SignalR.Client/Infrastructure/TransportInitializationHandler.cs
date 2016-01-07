@@ -50,13 +50,17 @@ namespace Microsoft.AspNet.SignalR.Client.Infrastructure
 
             _initializationTask = new TaskCompletionSource<object>();
             _initializationInvoker = new ThreadSafeInvoker();
-
+            
             // Default event
             OnFailure = () => { };
 
             // We want to fail if the disconnect token is tripped while we're waiting on initialization
             _tokenCleanup = disconnectToken.SafeRegister(
+#if NET35_PORT
+                _ => Fail(new OperationCanceledException(Resources.Error_ConnectionCancelled)),
+#else
                 _ => Fail(new OperationCanceledException(Resources.Error_ConnectionCancelled, disconnectToken)),
+#endif
                 state: null);
 
             TaskAsyncHelper.Delay(connection.TotalTransportConnectTimeout)

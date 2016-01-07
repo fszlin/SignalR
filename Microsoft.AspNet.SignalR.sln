@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30321.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.AspNet.SignalR.Core", "src\Microsoft.AspNet.SignalR.Core\Microsoft.AspNet.SignalR.Core.csproj", "{1B9A82C4-BCA1-4834-A33E-226F17BE070B}"
 EndProject
@@ -109,6 +109,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.AspNet.SignalR.Client.Store.TestHost", "tests\Microsoft.AspNet.SignalR.Client.Store.TestHost\Microsoft.AspNet.SignalR.Client.Store.TestHost.csproj", "{F0697521-4A41-4A2A-BA64-D9A97CAA62A1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.AspNet.SignalR.Redis.Tests", "tests\Microsoft.AspNet.SignalR.Redis.Tests\Microsoft.AspNet.SignalR.Redis.Tests.csproj", "{C281927C-2082-4E2A-A1DB-9CD7225F5CED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.AspNet.SignalR.ClientUnity", "src\Microsoft.AspNet.SignalR.ClientUnity\Microsoft.AspNet.SignalR.ClientUnity.csproj", "{633EE38E-AF83-45C0-A485-3138E3DA9294}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -694,6 +696,26 @@ Global
 		{C281927C-2082-4E2A-A1DB-9CD7225F5CED}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{C281927C-2082-4E2A-A1DB-9CD7225F5CED}.Release|x64.ActiveCfg = Release|Any CPU
 		{C281927C-2082-4E2A-A1DB-9CD7225F5CED}.Release|x86.ActiveCfg = Release|Any CPU
+		{633EE38E-AF83-45C0-A485-3138E3DA9294}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{633EE38E-AF83-45C0-A485-3138E3DA9294}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{633EE38E-AF83-45C0-A485-3138E3DA9294}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{633EE38E-AF83-45C0-A485-3138E3DA9294}.Debug|ARM.Build.0 = Debug|Any CPU
+		{633EE38E-AF83-45C0-A485-3138E3DA9294}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{633EE38E-AF83-45C0-A485-3138E3DA9294}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{633EE38E-AF83-45C0-A485-3138E3DA9294}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{633EE38E-AF83-45C0-A485-3138E3DA9294}.Debug|x64.Build.0 = Debug|Any CPU
+		{633EE38E-AF83-45C0-A485-3138E3DA9294}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{633EE38E-AF83-45C0-A485-3138E3DA9294}.Debug|x86.Build.0 = Debug|Any CPU
+		{633EE38E-AF83-45C0-A485-3138E3DA9294}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{633EE38E-AF83-45C0-A485-3138E3DA9294}.Release|Any CPU.Build.0 = Release|Any CPU
+		{633EE38E-AF83-45C0-A485-3138E3DA9294}.Release|ARM.ActiveCfg = Release|Any CPU
+		{633EE38E-AF83-45C0-A485-3138E3DA9294}.Release|ARM.Build.0 = Release|Any CPU
+		{633EE38E-AF83-45C0-A485-3138E3DA9294}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{633EE38E-AF83-45C0-A485-3138E3DA9294}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{633EE38E-AF83-45C0-A485-3138E3DA9294}.Release|x64.ActiveCfg = Release|Any CPU
+		{633EE38E-AF83-45C0-A485-3138E3DA9294}.Release|x64.Build.0 = Release|Any CPU
+		{633EE38E-AF83-45C0-A485-3138E3DA9294}.Release|x86.ActiveCfg = Release|Any CPU
+		{633EE38E-AF83-45C0-A485-3138E3DA9294}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

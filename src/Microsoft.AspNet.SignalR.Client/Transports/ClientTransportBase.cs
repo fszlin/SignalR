@@ -35,7 +35,11 @@ namespace Microsoft.AspNet.SignalR.Client.Transports
                 throw new ArgumentNullException("httpClient");
             }
 
+#if NET35_PORT
+            if (StringShim.IsNullOrWhiteSpace(transportName))
+#else
             if (string.IsNullOrWhiteSpace(transportName))
+#endif
             {
                 throw new ArgumentNullException("transportName");
             }

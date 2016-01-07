@@ -919,6 +919,8 @@ namespace Microsoft.AspNet.SignalR.Client
             request.UserAgent = CreateUserAgentString("SignalR.Client.WinRT");
 #elif NET45
             request.UserAgent = CreateUserAgentString("SignalR.Client.NET45");
+#elif NET35_PORT
+            request.UserAgent = CreateUserAgentString("SignalR.Client.NET35");
 #else
             request.UserAgent = CreateUserAgentString("SignalR.Client.NET4");
 #endif
@@ -947,7 +949,7 @@ namespace Microsoft.AspNet.SignalR.Client
         [SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Justification = "The Version constructor can throw exceptions of many different types. Failure is indicated by returning false.")]
         private static bool TryParseVersion(string versionString, out Version version)
         {
-#if PORTABLE
+#if PORTABLE || NET35_PORT
             try
             {
                 version = new Version(versionString);

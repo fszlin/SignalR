@@ -30,10 +30,14 @@ namespace Microsoft.AspNet.SignalR.Client.Infrastructure
             {
                 throw new ArgumentNullException("connection");
             }
-
+            
+#if NET35_PORT
+                if (StringShim.IsNullOrWhiteSpace(transport))
+#else
             if (string.IsNullOrWhiteSpace(transport))
-            {
-                throw new ArgumentNullException("transport");
+#endif
+                {
+                    throw new ArgumentNullException("transport");
             }
 
             return Trim(CreateBaseUrl("start", connection, transport, connectionData));
@@ -46,7 +50,11 @@ namespace Microsoft.AspNet.SignalR.Client.Infrastructure
                 throw new ArgumentNullException("connection");
             }
 
+#if NET35_PORT
+            if (StringShim.IsNullOrWhiteSpace(transport))
+#else
             if (string.IsNullOrWhiteSpace(transport))
+#endif
             {
                 throw new ArgumentNullException("transport");
             }
@@ -64,7 +72,11 @@ namespace Microsoft.AspNet.SignalR.Client.Infrastructure
                 throw new ArgumentNullException("connection");
             }
 
+#if NET35_PORT
+            if (StringShim.IsNullOrWhiteSpace(transport))
+#else
             if (string.IsNullOrWhiteSpace(transport))
+#endif
             {
                 throw new ArgumentNullException("transport");
             }
@@ -82,13 +94,21 @@ namespace Microsoft.AspNet.SignalR.Client.Infrastructure
                 throw new ArgumentNullException("connection");
             }
 
+#if NET35_PORT
+            if (StringShim.IsNullOrWhiteSpace(transport))
+#else
             if (string.IsNullOrWhiteSpace(transport))
+#endif
             {
                 throw new ArgumentNullException("transport");
             }
 
             Debug.Assert(connection != null, "connection is null");
+#if NET35_PORT
+            Debug.Assert(!StringShim.IsNullOrWhiteSpace(transport), "invalid transport");
+#else
             Debug.Assert(!string.IsNullOrWhiteSpace(transport), "invalid transport");
+#endif
 
             var urlStringBuilder = CreateBaseUrl("poll", connection, transport, connectionData);
             AppendReceiveParameters(urlStringBuilder, connection);
@@ -103,7 +123,11 @@ namespace Microsoft.AspNet.SignalR.Client.Infrastructure
                 throw new ArgumentNullException("connection");
             }
 
+#if NET35_PORT
+            if (StringShim.IsNullOrWhiteSpace(transport))
+#else
             if (string.IsNullOrWhiteSpace(transport))
+#endif
             {
                 throw new ArgumentNullException("transport");
             }
@@ -118,7 +142,11 @@ namespace Microsoft.AspNet.SignalR.Client.Infrastructure
                 throw new ArgumentNullException("connection");
             }
 
+#if NET35_PORT
+            if (StringShim.IsNullOrWhiteSpace(transport))
+#else
             if (string.IsNullOrWhiteSpace(transport))
+#endif
             {
                 throw new ArgumentNullException("transport");
             }
