@@ -27,7 +27,7 @@ namespace Microsoft.AspNet.SignalR.Client.Transports
 
             _transports = new List<IClientTransport>()
             {
-#if NET45
+#if NET45 || NET35
                 new WebSocketTransport(httpClient),
 #endif
                 new ServerSentEventsTransport(httpClient),
