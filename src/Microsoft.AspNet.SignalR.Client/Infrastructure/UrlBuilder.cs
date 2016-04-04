@@ -31,7 +31,11 @@ namespace Microsoft.AspNet.SignalR.Client.Infrastructure
                 throw new ArgumentNullException("connection");
             }
 
+#if !NET35
             if (string.IsNullOrWhiteSpace(transport))
+#else
+            if (StringShim.IsNullOrWhiteSpace(transport))
+#endif
             {
                 throw new ArgumentNullException("transport");
             }
@@ -46,7 +50,11 @@ namespace Microsoft.AspNet.SignalR.Client.Infrastructure
                 throw new ArgumentNullException("connection");
             }
 
+#if !NET35
             if (string.IsNullOrWhiteSpace(transport))
+#else
+            if (StringShim.IsNullOrWhiteSpace(transport))
+#endif
             {
                 throw new ArgumentNullException("transport");
             }
@@ -64,7 +72,11 @@ namespace Microsoft.AspNet.SignalR.Client.Infrastructure
                 throw new ArgumentNullException("connection");
             }
 
+#if !NET35
             if (string.IsNullOrWhiteSpace(transport))
+#else
+            if (StringShim.IsNullOrWhiteSpace(transport))
+#endif
             {
                 throw new ArgumentNullException("transport");
             }
@@ -82,15 +94,23 @@ namespace Microsoft.AspNet.SignalR.Client.Infrastructure
                 throw new ArgumentNullException("connection");
             }
 
+#if !NET35
             if (string.IsNullOrWhiteSpace(transport))
+#else
+            if (StringShim.IsNullOrWhiteSpace(transport))
+#endif
             {
                 throw new ArgumentNullException("transport");
             }
 
             Debug.Assert(connection != null, "connection is null");
+#if !NET35
             Debug.Assert(!string.IsNullOrWhiteSpace(transport), "invalid transport");
+#else
+            Debug.Assert(!StringShim.IsNullOrWhiteSpace(transport), "invalid transport");
+#endif
 
-            var urlStringBuilder = CreateBaseUrl("poll", connection, transport, connectionData);
+                var urlStringBuilder = CreateBaseUrl("poll", connection, transport, connectionData);
             AppendReceiveParameters(urlStringBuilder, connection);
 
             return Trim(urlStringBuilder);
@@ -103,7 +123,11 @@ namespace Microsoft.AspNet.SignalR.Client.Infrastructure
                 throw new ArgumentNullException("connection");
             }
 
+#if !NET35
             if (string.IsNullOrWhiteSpace(transport))
+#else
+            if (StringShim.IsNullOrWhiteSpace(transport))
+#endif
             {
                 throw new ArgumentNullException("transport");
             }
@@ -118,7 +142,11 @@ namespace Microsoft.AspNet.SignalR.Client.Infrastructure
                 throw new ArgumentNullException("connection");
             }
 
+#if !NET35
             if (string.IsNullOrWhiteSpace(transport))
+#else
+            if (StringShim.IsNullOrWhiteSpace(transport))
+#endif
             {
                 throw new ArgumentNullException("transport");
             }

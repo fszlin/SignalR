@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCompany("Microsoft Open Technologies, Inc.")]
 [assembly: AssemblyCopyright("© Microsoft Open Technologies, Inc. All rights reserved.")]
 [assembly: AssemblyProduct("Microsoft ASP.NET SignalR")]
-[assembly: AssemblyMetadata("Serviceable", "True")]
+//[assembly: AssemblyMetadata("Serviceable", "True")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: AssemblyConfiguration("")]

@@ -45,7 +45,11 @@ namespace Microsoft.AspNet.SignalR.Client.Transports.ServerSentEvents
                     _buffer.Remove(0, _offset + 1);
 
                     string line = _lineBuilder.ToString().Trim();
+#if !NET35
                     _lineBuilder.Clear();
+#else
+                    _lineBuilder.Length = 0;
+#endif
 
                     _offset = 0;
                     return line;
