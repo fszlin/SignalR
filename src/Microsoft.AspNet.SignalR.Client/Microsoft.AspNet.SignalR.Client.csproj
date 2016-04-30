@@ -30,14 +30,22 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE;STABLE_VERSION;NET4;CLIENT_NET4</DefineConstants>
+    <DefineConstants>TRACE;CLIENT_NET35;NET35;UNITY</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\Microsoft.AspNet.SignalR.Client.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.1.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\..\packages\BouncyCastle.1.8.1\lib\BouncyCastle.Crypto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Newtonsoft.Json.Unity.8.0.2.2\lib\net35\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SslStream35, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SslStream35.Unity.1.0.0-beta0\lib\net35\SslStream35.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -46,8 +54,12 @@
       <HintPath>..\..\packages\TaskParallelLibrary.1.0.2856.0\lib\Net35\System.Threading.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="websocket-sharp, Version=1.0.2.36589, Culture=neutral, PublicKeyToken=5660b08a1845a91e, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\WebSocketSharp.1.0.3-rc9\lib\websocket-sharp.dll</HintPath>
+    <Reference Include="Unity.IO.Compression, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Unity.IO.Compression.1.0.0\lib\net35\Unity.IO.Compression.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebSocketSharp.Client, Version=1.0.2.40299, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WebSocketSharp.Unity.1.0.3-rc9\lib\net35\WebSocketSharp.Client.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
@@ -92,6 +104,13 @@
     <Compile Include="Http\IRequest.cs" />
     <Compile Include="Http\IResponse.cs" />
     <Compile Include="Http\IResponseExtensions.cs" />
+    <Compile Include="Http\UnityHttpClient.cs" />
+    <Compile Include="Http\UnityHttpException.cs" />
+    <Compile Include="Http\UnityHttpRequest.cs" />
+    <Compile Include="Http\UnityHttpRequestState.cs" />
+    <Compile Include="Http\UnityHttpResponse.cs" />
+    <Compile Include="Http\UnityHttpRequestWrapper.cs" />
+    <Compile Include="Http\UnityResponseWrapper.cs" />
     <Compile Include="HubConnection.cs" />
     <Compile Include="HubException.cs" />
     <Compile Include="HubProxyExtensions.cs" />
@@ -152,11 +171,11 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Transports\WebSockets\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="..\Common\Microsoft.AspNet.SignalR.targets" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="!HasTrailingSlash('$(SolutionDir)')" />

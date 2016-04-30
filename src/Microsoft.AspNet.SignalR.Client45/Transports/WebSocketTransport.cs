@@ -54,10 +54,10 @@ namespace Microsoft.AspNet.SignalR.Client.Transports
         }
 #endif
 
-    /// <summary>
-    /// The time to wait after a connection drops to try reconnecting.
-    /// </summary>
-    public TimeSpan ReconnectDelay { get; set; }
+        /// <summary>
+        /// The time to wait after a connection drops to try reconnecting.
+        /// </summary>
+        public TimeSpan ReconnectDelay { get; set; }
 
         /// <summary>
         /// Indicates whether or not the transport supports keep alive
@@ -118,7 +118,7 @@ namespace Microsoft.AspNet.SignalR.Client.Transports
             await _webSocketHandler.ProcessWebSocketRequestAsync(_webSocket, token);
 #else
             _webSocket = new WebSocket(uri.AbsoluteUri);
-
+            
             _webSocket.OnOpen += (sender, e) => this.OnOpen();
             _webSocket.OnClose += (sender, e) => this.OnClose();
             _webSocket.OnMessage += (sender, e) => this.OnMessage(e.Data);
