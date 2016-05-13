@@ -118,12 +118,14 @@ namespace Microsoft.AspNet.SignalR.Client.Transports
             await _webSocketHandler.ProcessWebSocketRequestAsync(_webSocket, token);
 #else
             _webSocket = new WebSocket(uri.AbsoluteUri);
+
+            _connection.PrepareRequest(new WebSocketWrapperRequest(_webSocket, _connection));
             
             _webSocket.OnOpen += (sender, e) => this.OnOpen();
             _webSocket.OnClose += (sender, e) => this.OnClose();
             _webSocket.OnMessage += (sender, e) => this.OnMessage(e.Data);
             _webSocket.OnError += (sender, e) => this.OnError(e.Exception);
-
+            
             _webSocket.Connect();
             return TaskAsyncHelper.Empty;
 #endif

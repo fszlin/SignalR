@@ -46,8 +46,8 @@
       <HintPath>..\..\packages\TaskParallelLibrary.1.0.2856.0\lib\Net35\System.Threading.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="WebSocketSharp.Client, Version=1.0.2.41019, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\WebSocketSharp.Unity.1.0.3.1-beta1\lib\net35\WebSocketSharp.Client.dll</HintPath>
+    <Reference Include="WebSocketSharp.Client, Version=1.0.2.28952, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WebSocketSharp.Unity.1.0.3.2\lib\net35\WebSocketSharp.Client.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
@@ -143,6 +143,7 @@
     <Compile Include="Transports\ServerSentEvents\EventType.cs" />
     <Compile Include="Transports\ServerSentEvents\SseEvent.cs" />
     <Compile Include="Transports\TransportHelper.cs" />
+    <Compile Include="Transports\WebSocketWrapperRequest.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources.resx">
